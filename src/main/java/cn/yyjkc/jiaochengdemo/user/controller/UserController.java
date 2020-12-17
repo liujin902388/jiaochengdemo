@@ -18,7 +18,7 @@ import java.util.Map;
  * RestController =@ResponseBody+@Controller
  * */
 @Controller
-@RequestMapping("user")
+@RequestMapping("/user")
 public class UserController {
 
 
@@ -51,6 +51,21 @@ public class UserController {
         return "success";
     }
 
+
+
+    //根据id查询用户信息
+    @RequestMapping("/getUserById")
+    @ResponseBody
+    public UserEntity getUserById(Integer id){
+        return userService.getUserById(id);
+    }
+    //根据id修改用户信息
+    @RequestMapping("/updateUserById")
+    @ResponseBody
+    public String updateUserById(@RequestBody UserEntity userEntity){
+        userService.updateUserById(userEntity);
+        return "success";
+    }
 
 
 }

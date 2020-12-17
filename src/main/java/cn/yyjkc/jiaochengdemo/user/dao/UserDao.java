@@ -17,6 +17,10 @@ public interface UserDao {
 
     void save(UserEntity userEntity);
 
+    UserEntity getUserById(Integer id);
+
+    void updateUserById(UserEntity userEntity);
+
 
 
 }
